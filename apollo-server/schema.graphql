@@ -37,7 +37,7 @@ type Query {
 	"List of messages sent by users"
 	messages: [Message]
 	uploads: [File]
-	ning: String!
+	ning: String! 
 }
 
 type Mutation {

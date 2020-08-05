@@ -1,15 +1,14 @@
 <template>
-  <navigate></navigate>
+	<navigate></navigate>
 </template>
 
 <script>
 import navigate from "../components/navigate";
 export default {
-  components: {
-    navigate,
-  },
+	components: {
+		navigate,
+	},
 };
 </script>
 
-<style>
-</style>
+<style></style>

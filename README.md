@@ -1,24 +1,9 @@
-# road-manager
+# **Road-Manager**
 
-## Project setup
-```
-npm install
-```
+기술 스택
+frontend - vue
+backend - express, prisma2
+db - postgresql
+deploy - heroku
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+(heroku에 배포하기 위해 dist 폴더도 git에 올림)

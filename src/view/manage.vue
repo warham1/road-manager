@@ -1,11 +1,17 @@
 <template>
 	<div>
 		<p>manage view</p>
+		<userlist></userlist>
 	</div>
 </template>
 
 <script>
-export default {};
+import userlist from "../components/userlist";
+export default {
+	components: {
+		userlist,
+	},
+};
 </script>
 
 <style></style>

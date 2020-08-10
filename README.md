@@ -2,7 +2,7 @@
 
 기술 스택
 
-frontend - vue
+frontend - vue, axios
 
 backend - express, prisma2
 

@@ -1,8 +1,12 @@
 <template>
-  <div>
-    <router-link to="/manage">manage</router-link>
-    <router-link to="/drive">drive</router-link>
-  </div>
+	<div>
+		<v-btn x-large rounded to="/manage">
+			manage
+		</v-btn>
+		<v-btn x-large rounded to="/drive">
+			drive
+		</v-btn>
+	</div>
 </template>
 
 <script>
@@ -11,6 +15,6 @@ export default {};
 
 <style>
 a {
-  margin: 10px;
+	margin: 10px;
 }
 </style>

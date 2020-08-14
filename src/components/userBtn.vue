@@ -18,7 +18,7 @@
 							v-for="(item, index) in userData[1]"
 							:key="index"
 							color="'green'"
-							@click="listsOnClick"
+							@click="listsOnClick(item, index)"
 						>
 							<v-list-item-icon>
 								<v-icon v-text="'account_circle'"></v-icon>
@@ -48,8 +48,18 @@ export default {
 		btnOnClick: function() {
 			this.dialog = true;
 		},
-		listsOnClick: function() {
-			if (this.selected.length + 1 === this.userData[1].length) this.color = "green";
+		listsOnClick: function(item, id) {
+			const rideYN = !item.rideYN;
+
+			console.log(item.name);
+			console.log(rideYN);
+
+			this.$http.put("/ride", {
+				name: item.name,
+				rideYN: rideYN,
+			});
+			if (!this.selected.includes(id) && this.selected.length + 1 === this.userData[1].length)
+				this.color = "green";
 			else this.color = "yellow";
 		},
 	},
@@ -60,7 +70,7 @@ export default {
 	},
 	mounted() {
 		for (const [key, value] of Object.entries(this.userData[1])) {
-			if (value.name === "ning" && !this.selected.includes(key)) {
+			if (value.rideYN && !this.selected.includes(key)) {
 				this.selected.push(Number(key));
 				if (this.selected.length === this.userData[1].length) this.color = "green";
 				else this.color = "yellow";

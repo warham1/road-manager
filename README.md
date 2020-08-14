@@ -4,12 +4,10 @@
 
 frontend - vue, axios
 
-backend - express, prisma2
+backend - express
 
-db - postgresql
+db - postgresql, prisma2
 
 deploy - heroku
-
-(heroku에 배포하기 위해 dist 폴더도 git에 올림)
 
 [링크](https://road-manager-vue.herokuapp.com/)

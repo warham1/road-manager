@@ -1,6 +1,9 @@
 module.exports = {
-  "pluginOptions": {},
-  "transpileDependencies": [
-    "vuetify"
-  ]
-}
+	pluginOptions: {},
+	transpileDependencies: ["vuetify"],
+	configureWebpack: {
+		devServer: {
+			historyApiFallback: true,
+		},
+	},
+};

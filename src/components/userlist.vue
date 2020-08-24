@@ -1,8 +1,11 @@
 <template>
-  <v-data-table :search="search" :items="users" :headers="headers">
+  <v-data-table :search="search" :items="users" :headers="headers" item-key="id" show-select>
     <template v-slot:body="{ items }">
       <tbody>
         <tr v-for="(item, i) in items" :key="i" @click="userClick(item)">
+          <td>
+            <v-checkbox color="green" v-model="selected" :value="item.id" @click.stop hide-details></v-checkbox>
+          </td>
           <td>{{ item.name }}</td>
           <td>{{ item.address }}</td>
           <td>{{ item.age }}</td>
@@ -19,6 +22,7 @@ export default {
   data() {
     return {
       users: [],
+      selected: [],
       headers: [
         {
           text: "이름",
@@ -44,7 +48,7 @@ export default {
       days: ["일", "월", "화", "수", "목", "금", "토"],
     };
   },
-  props: ["search", "userClick"],
+  props: ["search", "userClick", "updateSelect"],
   created() {
     this.$http.get("/User").then((result) => {
       this.users = result.data;
@@ -60,6 +64,11 @@ export default {
           return this.days[Number(item)];
         });
       }
+    },
+  },
+  watch: {
+    selected: function (val) {
+      this.updateSelect(val);
     },
   },
 };

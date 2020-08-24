@@ -61,24 +61,34 @@ export default {
   methods: {
     confirm: function () {
       if (this.updateyn) {
-        this.$http.put("/User", {
-          id: this.user.id,
-          name: this.user.name,
-          address: this.user.address,
-          sex: this.user.sex,
-          age: Number(this.user.age),
-        });
+        this.$http
+          .put("/User", {
+            id: this.user.id,
+            name: this.user.name,
+            address: this.user.address,
+            sex: this.user.sex,
+            age: Number(this.user.age),
+          })
+          .then(() => {
+            alert("수정되었습니다.");
+            this.$router.go();
+          });
       } else {
         console.log(this.user);
         console.log(Number(this.user.age));
-        this.$http.post("/createUser", {
-          name: this.user.name,
-          address: this.user.address,
-          sex: this.user.sex,
-          age: Number(this.user.age),
-          time: "1800",
-          rideDays: [4],
-        });
+        this.$http
+          .post("/createUser", {
+            name: this.user.name,
+            address: this.user.address,
+            sex: this.user.sex,
+            age: Number(this.user.age),
+            time: "1800",
+            rideDays: [4],
+          })
+          .then(() => {
+            alert("생성되었습니다.");
+            this.$router.go();
+          });
       }
       this.dialog = false;
     },

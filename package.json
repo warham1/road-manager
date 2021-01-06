@@ -11,7 +11,7 @@
 		"copy": "@powershell copy './deploy/package.json' './dist' && @powershell copy './deploy/server.js' './dist' && @powershell mkdir './dist/route' && @powershell copy './deploy/index.js' './dist/route/'"
 	},
 	"dependencies": {
-		"axios": "^0.19.2",
+		"axios": "^0.21.1",
 		"connect-history-api-fallback": "^1.6.0",
 		"core-js": "^3.6.5",
 		"lowdb": "^1.0.0",
